@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Welcome to SIMPLE CMS</title>
+</head>
+<body>
+    <marquee direction="right">THIS IS CONTENT MANAGEMENT SYSTEM</marquee>
+    <font size="8" face="Arial"><b><textarea cols="50" rows="5" align= "center">This is just a demo website to store the employee database </textarea></b></font>
+      <%= link_to 'Log In', {:ontroller => 'demo',:action => 'login',:id => 1 ,:page => 2 }%>
+      <br>
+      <% @array.each do |a| %>
+         <%= a %>
+         <% end %>
+</body>
+
+
+</html>
