@@ -1,0 +1,14 @@
+<h1>Add new book</h1>
+
+<%= form_for @book ,:url =>{:controller=> 'book',:action=> 'create'} do |f|  %>
+
+<p>Title: <%= f.text_field :title %></p>
+<p>Price: <%= f.text_field  :price %></p>
+<p>Subject: <%= f.collection_select(:subject_id,@subjects,:id,:name ,prompt: true)%></p>
+<p>Description<br/>
+
+<%= f.text_area :description %></p>
+<%= f.submit "Create Subject" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list' } %>

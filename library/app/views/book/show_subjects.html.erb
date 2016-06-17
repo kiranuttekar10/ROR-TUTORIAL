@@ -1,0 +1,15 @@
+<h2> Subject with books available </h2>
+
+<hr/>
+<p> <b>Name of the Subject:</b> <%= @subject.name %> </p>
+<br/> <p><b>Books available :</b> <%  if @books.blank? %>
+                      There are no books available for this subject
+                      <% else %>
+                      <% @books.each do |b| %>
+                     <ul><li><%= b.title %><b> <%= link_to "Info", {:action=>'show' , :id=>b.id} %></b></li>
+                     </ul></p>
+                     <% end %>
+                     <% end%>
+
+ <hr/>
+<%= link_to "Back to main list", { :action=> 'list'} %>

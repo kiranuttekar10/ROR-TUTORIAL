@@ -1,0 +1,26 @@
+<h2> Subjects for which books are available </h2> 
+<ul id="subjects">
+   <% Subject.all.each do |s| %>
+    <li> <%= link_to s.name , {:action=>'show_subjects' , :id =>s.id} %></li>
+    <% end %>
+</ul>
+
+<% if @books.blank? %>
+<p> There are no books yet</p>
+<% else %>
+<p>These are the current books </p>
+
+<ul id ="books" >
+    <% @books.each do |b|%>
+    <li> <%= link_to b.title, {:action=> 'show' , :id => b.id} %>
+    <b> <%= link_to "Edit", {:action => 'edit' , :id =>b.id} %>
+    	
+    </b>
+    <b> <%= link_to "Delete",{:action => 'delete',:id=> b.id},
+    :confirm => "Are you sure you want to delete this book?" %></b></li>
+     
+        <% end%>
+    </ul>
+    <%end%>
+
+ <p> <%= link_to "Add new Book", { :action=> 'new'} %> </p>
