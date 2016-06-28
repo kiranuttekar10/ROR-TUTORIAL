@@ -1,5 +1,5 @@
 class BookController < ApplicationController
-	layout false
+	layout 'standard'
 def index
 
 end
